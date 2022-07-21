@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+
 import 'card_image.dart';
 
 class CardImageList extends StatelessWidget {
+  const CardImageList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
+    return SizedBox(
       height: 350.0,
       child: ListView(
-        padding: EdgeInsets.all(25.0),
+        padding: const EdgeInsets.all(25.0),
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           CardImage("assets/img/beach_palm.jpeg"),
@@ -21,5 +22,4 @@ class CardImageList extends StatelessWidget {
       ),
     );
   }
-
 }

@@ -1,16 +1,18 @@
-import 'package:flutter/material.dart';
+import 'package:curzo_avanzado_flutter_plat/user/ui/screens/profile_trips.dart';
 import 'package:flutter/cupertino.dart';
-import 'home_trips.dart';
-import 'search_trips.dart';
-import 'profile_trips.dart';
+import 'package:flutter/material.dart';
+
+import 'places/ui/screens/home_trips.dart';
+import 'places/ui/screens/search_trips.dart';
 
 class PlatziTripsCupertino extends StatelessWidget {
+  const PlatziTripsCupertino({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       bottomNavigationBar: CupertinoTabScaffold(
-        tabBar: CupertinoTabBar(items: [
+        tabBar: CupertinoTabBar(items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home, color: Colors.indigo),
             label: (""),
@@ -30,17 +32,14 @@ class PlatziTripsCupertino extends StatelessWidget {
               return CupertinoTabView(
                 builder: (BuildContext context) => HomeTrips(),
               );
-              break;
             case 1:
               return CupertinoTabView(
-                builder: (BuildContext context) => SearchTrips(),
+                builder: (BuildContext context) => const SearchTrips(),
               );
-              break;
             case 2:
               return CupertinoTabView(
-                builder: (BuildContext context) => ProfileTrips(),
+                builder: (BuildContext context) => const ProfileTrips(),
               );
-              break;
             default:
               return CupertinoTabView(
                 builder: (BuildContext context) => HomeTrips(),

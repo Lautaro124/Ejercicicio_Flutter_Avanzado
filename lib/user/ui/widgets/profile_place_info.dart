@@ -1,12 +1,12 @@
+import 'package:curzo_avanzado_flutter_plat/places/models/place.dart';
+import 'package:curzo_avanzado_flutter_plat/widgets/floating_action_button_green.dart';
 import 'package:flutter/material.dart';
-import 'place.dart';
-import 'floating_action_button_green.dart';
 
+// ignore: must_be_immutable
 class ProfilePlaceInfo extends StatelessWidget {
-
   Place place;
 
-  ProfilePlaceInfo(this.place);
+  ProfilePlaceInfo(this.place, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,85 +14,64 @@ class ProfilePlaceInfo extends StatelessWidget {
 
     final place = Text(
       this.place.name,
-      style: TextStyle(
-          fontFamily: 'Lato',
-          fontSize: 20.0,
-          fontWeight: FontWeight.bold
-      ),
+      style: const TextStyle(
+          fontFamily: 'Lato', fontSize: 20.0, fontWeight: FontWeight.bold),
     );
 
     final placeInfo = Padding(
-        padding: EdgeInsets.symmetric(
-            vertical: 10.0
-        ),
+        padding: const EdgeInsets.symmetric(vertical: 10.0),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
                 this.place.where,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Color.fromRGBO(0, 0, 0, 0.4),
                     fontFamily: 'Lato',
                     fontSize: 12.0,
-                    fontWeight: FontWeight.bold
-                ),
+                    fontWeight: FontWeight.bold),
               ),
               Text(
                 this.place.type,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Color.fromRGBO(0, 0, 0, 0.4),
                     fontFamily: 'Lato',
                     fontSize: 12.0,
-                    fontWeight: FontWeight.bold
-                ),
+                    fontWeight: FontWeight.bold),
               )
-            ]
-        )
-    );
+            ]));
 
     final steps = Text(
       'Steps ${this.place.steps}',
-      style: TextStyle(
+      style: const TextStyle(
           fontFamily: 'Lato',
           fontSize: 14.0,
           fontWeight: FontWeight.bold,
-          color: Colors.amber
-      ),
+          color: Colors.amber),
     );
 
     final card = Container(
       width: screenWidth * 0.65,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
           color: Colors.white,
           boxShadow: <BoxShadow>[
             BoxShadow(
                 color: Colors.black38,
                 blurRadius: 10.0,
-                offset: Offset(0.0, 5.0)
-            )
-          ]
-      ),
+                offset: Offset(0.0, 5.0))
+          ]),
       child: Padding(
-          padding: EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              place,
-              placeInfo,
-              steps
-            ],
-          )
-      ),
+            children: <Widget>[place, placeInfo, steps],
+          )),
     );
 
     return Stack(
-      alignment: Alignment(0.8, 1.25),
-      children: <Widget>[
-        card,
-        FloatingActionButtonGreen()
-      ],
+      alignment: const Alignment(0.8, 1.25),
+      children: <Widget>[card, const FloatingActionButtonGreen()],
     );
   }
-
 }

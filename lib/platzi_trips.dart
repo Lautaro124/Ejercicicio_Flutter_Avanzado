@@ -1,12 +1,14 @@
+import 'package:curzo_avanzado_flutter_plat/user/ui/screens/profile_trips.dart';
 import 'package:flutter/material.dart';
-import 'home_trips.dart';
-import 'search_trips.dart';
-import 'profile_trips.dart';
+
+import 'places/ui/screens/home_trips.dart';
+import 'places/ui/screens/search_trips.dart';
 
 class PlatziTrips extends StatefulWidget {
+  const PlatziTrips({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _PlatziTrips();
   }
 }
@@ -15,8 +17,8 @@ class _PlatziTrips extends State<PlatziTrips> {
   int indexTap = 0;
   final List<Widget> widgetsChildren = [
     HomeTrips(),
-    SearchTrips(),
-    ProfileTrips()
+    const SearchTrips(),
+    const ProfileTrips()
   ];
 
   void onTapTapped(int index) {
@@ -27,8 +29,6 @@ class _PlatziTrips extends State<PlatziTrips> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-
     return Scaffold(
       body: widgetsChildren[indexTap],
       bottomNavigationBar: Theme(
@@ -37,7 +37,7 @@ class _PlatziTrips extends State<PlatziTrips> {
         child: BottomNavigationBar(
             onTap: onTapTapped,
             currentIndex: indexTap,
-            items: [
+            items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
                 label: (""),
