@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class GradientBack extends StatelessWidget {
   String title = "Popular";
+  double? height = 250.0;
 
-  GradientBack(this.title, {Key? key}) : super(key: key);
+  GradientBack(this.title, {Key? key, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250.0,
+      height: height,
       decoration: const BoxDecoration(
           gradient: LinearGradient(
               colors: [Color(0xFF4268D3), Color(0xFF584CD1)],
